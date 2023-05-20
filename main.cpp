@@ -3,11 +3,14 @@
 #include "Scheduler.h"
 #include "SystemCall.h"
 #include "ContextSwitch.h"
+#include "SpinlLock.h"
 
-int main() {
+int main()
+{
     Scheduler scheduler;
     SystemCall sysCall(scheduler);
     ContextSwitch contextSwitch;
+    SpinLock spinLock();
 
     sysCall.createProcess(1, 1);
     sysCall.createProcess(2, 2);
